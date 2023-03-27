@@ -27,6 +27,18 @@ const FormCreate = () => {
     healtScore: '',
     diets: '',
   });
+  const dietas = {
+    1: 'Gluten Free',
+    2: 'Ketogenic',
+    3: 'Dairy Free',
+    4: 'Vegan',
+    5: 'Lacto-Ovo Vegetarian',
+    6: 'Pescatarian',
+    7: 'Paleolithic',
+    8: 'Fodmap Friendly',
+    9: 'Primal',
+    10: 'Whole 30',
+  };
 
   const handleChange = (event) => {
     setData({
@@ -166,7 +178,7 @@ const FormCreate = () => {
               {data.diets.length > 0 &&
                 data.diets.map((diet, index) => (
                   <li key={index} className={styles.divDiet}>
-                    <p>{diet}</p>
+                    <p>{dietas[diet]}</p>
                     <button
                       value={diet}
                       onClick={removeDiet}

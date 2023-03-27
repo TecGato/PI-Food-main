@@ -67,5 +67,7 @@
 }
 
 .img {
+  margin-top: 20px;
   border-radius: 15px;
+  box-shadow: 15px 15px 30px #a7a6a6, -15px -15px 30px #ffffff;
 }
