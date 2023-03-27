@@ -1,0 +1,37 @@
+.inputGroup {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  min-height: 50px;
+  max-width: 150px;
+  padding: 0 1rem;
+  color: #fff;
+  font-size: 15px;
+  border: 1px solid rgb(255, 201, 53);
+  border-radius: 6px 0 0 6px;
+  background-color: transparent;
+}
+
+.button {
+  min-height: 50px;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: rgb(255, 201, 53);
+  color: #000000;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: hsl(155, 93%, 30%);
+}
+
+.input:focus,
+.input:focus-visible {
+  border-color: hsl(155, 93%, 30%);
+  outline: none;
+}

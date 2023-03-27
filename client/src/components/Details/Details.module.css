@@ -1,0 +1,71 @@
+.container {
+  background-image: url('https://img.freepik.com/free-photo/various-pantry-products-leaves-wooden-spoons_23-2148796323.jpg?w=1060&t=st=1679790546~exp=1679791146~hmac=6f42c30bc58a0dd8fd9300067a9739cfbe9dec94b21cb3ee3a4ee86cc8d15336');
+  background-size: cover;
+  display: grid;
+  grid-template-areas:
+    'izq der'
+    'aba aba';
+}
+
+.p {
+  text-align: left;
+  margin: 0px;
+}
+
+.h1 {
+  margin: 0px;
+}
+.h2 {
+  margin: 0px;
+}
+
+.h3 {
+  margin: 0px;
+}
+
+.divIzq {
+  margin-top: 20px;
+  grid-area: izq;
+}
+
+.divDer {
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  grid-area: der;
+  justify-content: center;
+  align-items: center;
+}
+
+.h4 {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin: 2px;
+}
+
+.divAba {
+  margin-left: 10px;
+  margin-right: 20px;
+  grid-area: aba;
+}
+
+.divSteps {
+  margin-left: 20px;
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.diets {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  border-radius: 15px;
+}

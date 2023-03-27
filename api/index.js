@@ -18,11 +18,28 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+const { conn, Diets } = require('./src/db.js');
+const saveApiOnDB = require('./src/helpers/saveApiOnDB');
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
   server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
+    const dietas = [
+      'gluten free',
+      'ketogenic',
+      'dairy free',
+      'vegan',
+      'lacto ovo vegetarian',
+      'pescatarian',
+      'paleolithic',
+      'fodmap friendly',
+      'primal',
+      'whole 30',
+    ];
+    dietas.forEach((dieta) => {
+      Diets.create({ name: dieta });
+    });
+    // saveApiOnDB();
+    console.log('Is listening at 3001'); // eslint-disable-line no-console
   });
 });

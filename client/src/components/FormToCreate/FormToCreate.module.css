@@ -1,0 +1,70 @@
+.btn {
+  background-color: transparent;
+  position: relative;
+  border: none;
+}
+
+.btn::after {
+  content: 'delete';
+  position: absolute;
+  top: -130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(168, 7, 7);
+  padding: 4px 8px;
+  border-radius: 5px;
+  transition: 0.2s linear;
+  transition-delay: 0.2s;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.icon {
+  transform: scale(1.2);
+  transition: 0.2s linear;
+}
+
+.btn:hover > .icon {
+  transform: scale(1.5);
+}
+
+.btn:hover > .icon path {
+  fill: rgb(168, 7, 7);
+}
+
+.btn:hover::after {
+  visibility: visible;
+  opacity: 1;
+  top: -160%;
+}
+
+.container {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: start;
+  background-image: url('https://img.freepik.com/foto-gratis/vista-superior-verduras-espacio-copia_23-2148853317.jpg?w=1060&t=st=1679718837~exp=1679719437~hmac=7f7ca4f062a6e651083adbbf4297b3ae10f105f3aaa3396abdb18ae7bc6c5888');
+  background-size: cover;
+  height: 711px;
+}
+
+.divDiet {
+  display: flex;
+  flex-direction: row;
+}
+
+.divButton {
+  margin-left: 300px;
+}
+
+.divForm {
+  margin-left: 200px;
+  text-align: left;
+}
