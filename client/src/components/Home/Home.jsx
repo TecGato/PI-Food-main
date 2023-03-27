@@ -45,17 +45,29 @@ export const Home = () => {
           maxPages={maxPages}
         />
       </div>
-      <div className={styles.div}>
-        {currentItemsPage.map((elemento) => (
-          <Card
-            key={elemento.id}
-            name={elemento.name}
-            image={elemento.image}
-            diets={elemento.diets}
-            id={elemento.id}
-          />
-        ))}
-      </div>
+      {currentItemsPage.length !== 0 ? (
+        <div className={styles.div}>
+          {currentItemsPage.map((elemento) => (
+            <Card
+              key={elemento.id}
+              name={elemento.name}
+              image={elemento.image}
+              diets={elemento.diets}
+              id={elemento.id}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className={styles.load}>
+          <div>G</div>
+          <div>N</div>
+          <div>I</div>
+          <div>D</div>
+          <div>A</div>
+          <div>O</div>
+          <div>L</div>
+        </div>
+      )}
     </div>
   );
 };
