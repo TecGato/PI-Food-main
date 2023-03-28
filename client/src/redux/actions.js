@@ -12,6 +12,7 @@ import {
   GETRECIPESBYQUERY,
   ORDERBYORIGIN,
   RESETDETAIL,
+  RECIPENOTFOUND,
 } from './actionTypes';
 
 export const getRecipeDetail = (id) => {
@@ -98,7 +99,7 @@ export const createRecipe = (payload) => {
 };
 
 export const filterSearchBar = (payload) => {
-  return async (dispatch) => {
+  return (dispatch) => {
     return dispatch({
       type: FILTERSEARCHBAR,
       payload,
@@ -108,19 +109,25 @@ export const filterSearchBar = (payload) => {
 
 export const getRecipesByQuery = (name) => {
   return async (dispatch) => {
-    const response = await axios.get(
-      `http://localhost:3001/recipes/?name=${name}`
-    );
-    const payload = response.data;
-    return dispatch({
-      type: GETRECIPESBYQUERY,
-      payload,
-    });
+    try {
+      const response = await axios.get(
+        `http://localhost:3001/recipes/?name=${name}`
+      );
+      const payload = response.data;
+      return dispatch({
+        type: GETRECIPESBYQUERY,
+        payload,
+      });
+    } catch (error) {
+      return dispatch({
+        type: RECIPENOTFOUND,
+      });
+    }
   };
 };
 
 export const orderByOrigin = (payload) => {
-  return async (dispatch) => {
+  return (dispatch) => {
     return dispatch({
       type: ORDERBYORIGIN,
       payload,

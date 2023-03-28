@@ -41,7 +41,9 @@ const getRecipesByQuery = async (req, res) => {
       return res.status(200).json(infTotal);
     }
 
-    const recetas = await Recipe.findAll();
+    const recetas = await Recipe.findAll({
+      where: { name: { [Op.iLike]: `%${name}%` } },
+    });
     const dbRes = await Promise.all(
       recetas.map(async (receta) => {
         const dietas = await receta.getDiets();

@@ -19,12 +19,12 @@ export const FilterOptions = (props) => {
   };
 
   const handlerOrderByDiets = (event) => {
-    console.log(props);
     props.setFirtsPage();
     dispatch(orderByDiets(event.target.value));
   };
 
   const handlerOrderByOrigin = (event) => {
+    props.setFirtsPage();
     dispatch(orderByOrigin(event.target.value));
   };
 

@@ -50,6 +50,7 @@ const FormCreate = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    setErrors(validate({ data }));
     if (Object.keys(errors).length === 0) {
       dispatch(createRecipe(data));
       window.alert('Receta creada Satisfactoriamente');
@@ -108,7 +109,7 @@ const FormCreate = () => {
               onChange={handleChange}
               value={data.name}
             />
-            {errors.name !== '' && <p>{errors.name}</p>}
+            {errors.name !== '' && <p className={styles.p}>{errors.name}</p>}
           </div>
           <div>
             <label>Resumen de Plato: </label>
@@ -120,7 +121,9 @@ const FormCreate = () => {
               onChange={handleChange}
               value={data.summary}
             />
-            {errors.summary !== '' && <p>{errors.summary}</p>}
+            {errors.summary !== '' && (
+              <p className={styles.p}>{errors.summary}</p>
+            )}
           </div>
           <div>
             <label>HealthScore: </label>
@@ -130,8 +133,12 @@ const FormCreate = () => {
               type='number'
               autoComplete='off'
               onChange={handleChange}
+              max='100'
+              min='1'
             />
-            {errors.healthScore !== '' && <p>{errors.healthScore}</p>}
+            {errors.healthScore !== '' && (
+              <p className={styles.p}>{errors.healthScore}</p>
+            )}
           </div>
           <div>
             <label>Imagen: </label>
@@ -143,7 +150,7 @@ const FormCreate = () => {
               onChange={handleChange}
               value={data.image}
             />
-            {errors.image !== '' && <p>{errors.image}</p>}
+            {errors.image !== '' && <p className={styles.p}>{errors.image}</p>}
           </div>
           <div>
             {Array.from({ length: stepsNum }).map((step, index) => (
@@ -201,7 +208,7 @@ const FormCreate = () => {
                   </li>
                 ))}
             </ul>
-            {errors.diets !== '' && <p>{errors.diets}</p>}
+            {errors.diets !== '' && <p className={styles.p}>{errors.diets}</p>}
           </div>
 
           <button type='submit'>Crear Receta</button>

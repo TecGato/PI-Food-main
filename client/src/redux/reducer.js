@@ -19,6 +19,7 @@ const initialState = {
   diets: [],
   detailRecipe: {},
   created: false,
+  //found: false,
 };
 
 const reducer = (state = initialState, action) => {
