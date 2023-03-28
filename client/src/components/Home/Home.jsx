@@ -24,6 +24,9 @@ export const Home = () => {
   const previousPage = () => {
     setCurrentPage(currentPage - 1);
   };
+  const setFirtsPage = () => {
+    setCurrentPage(1);
+  };
 
   useEffect(() => {
     dispatch(getAllR());
@@ -35,7 +38,7 @@ export const Home = () => {
         <Link to={'/form'}>
           <button>Create Recipe</button>
         </Link>
-        <FilterOptions allDiets={allDiets} />
+        <FilterOptions allDiets={allDiets} setFirtsPage={setFirtsPage} />
       </div>
       <div className={styles.pagination}>
         <Pagination

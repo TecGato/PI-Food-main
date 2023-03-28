@@ -19,6 +19,8 @@ export const FilterOptions = (props) => {
   };
 
   const handlerOrderByDiets = (event) => {
+    console.log(props);
+    props.setFirtsPage();
     dispatch(orderByDiets(event.target.value));
   };
 

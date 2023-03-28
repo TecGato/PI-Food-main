@@ -1,7 +1,7 @@
 const { Recipe, Diets } = require('../../db');
 const axios = require('axios');
 require('dotenv').config();
-const { URL_API, API_KEY_8 } = process.env;
+const { URL_API, API_KEY_1 } = process.env;
 
 const getRecipesById = async (req, res) => {
   const { idRecipe } = req.params;
@@ -14,7 +14,7 @@ const getRecipesById = async (req, res) => {
       if (dbRes) return res.status(200).json(dbRes);
     }
     const apiRes = await axios(
-      `${URL_API}/${idRecipe}/information?apiKey=${API_KEY_8}`
+      `${URL_API}/${idRecipe}/information?apiKey=${API_KEY_1}`
     );
     const data = apiRes.data;
     if (data) {

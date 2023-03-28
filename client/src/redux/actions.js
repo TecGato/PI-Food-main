@@ -11,6 +11,7 @@ import {
   FILTERSEARCHBAR,
   GETRECIPESBYQUERY,
   ORDERBYORIGIN,
+  RESETDETAIL,
 } from './actionTypes';
 
 export const getRecipeDetail = (id) => {
@@ -123,6 +124,14 @@ export const orderByOrigin = (payload) => {
     return dispatch({
       type: ORDERBYORIGIN,
       payload,
+    });
+  };
+};
+
+export const resetDetail = (dispatch) => {
+  return (dispatch) => {
+    return dispatch({
+      type: RESETDETAIL,
     });
   };
 };

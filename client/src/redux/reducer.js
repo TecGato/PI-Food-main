@@ -10,6 +10,7 @@ import {
   FILTERSEARCHBAR,
   GETRECIPESBYQUERY,
   ORDERBYORIGIN,
+  RESETDETAIL,
 } from './actionTypes';
 
 const initialState = {
@@ -131,7 +132,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         recipes: sort,
       };
-
+    case RESETDETAIL:
+      return {
+        ...state,
+        detailRecipe: {},
+      };
     default:
       return state;
   }
