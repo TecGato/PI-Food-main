@@ -17,7 +17,7 @@ import {
 
 export const getRecipeDetail = (id) => {
   return async (dispatch) => {
-    const response = await axios.get(`http://localhost:3001/recipes/${id}`);
+    const response = await axios.get(`/recipes/${id}`);
     const data = response.data;
     return dispatch({
       type: GETRECIPEBYID,
@@ -28,7 +28,7 @@ export const getRecipeDetail = (id) => {
 
 export const getAllR = () => {
   return async (dispatch) => {
-    const response = await axios.get('http://localhost:3001/recipes/');
+    const response = await axios.get('/recipes/');
     const data = response.data;
     return dispatch({
       type: GETALLRECIPES,
@@ -39,7 +39,7 @@ export const getAllR = () => {
 
 export const getAllD = () => {
   return async (dispatch) => {
-    const response = await axios.get('http://localhost:3001/diets');
+    const response = await axios.get('/diets');
     const data = response.data;
     return dispatch({
       type: GETALLDIETS,
@@ -85,10 +85,7 @@ export const deleteFilters = () => {
 
 export const createRecipe = (payload) => {
   return async (dispatch) => {
-    const response = await axios.post(
-      'http://localhost:3001/recipes/',
-      payload
-    );
+    const response = await axios.post('/recipes/', payload);
     if (response.status !== 400) {
       return dispatch({
         type: CREATERECIPE,
@@ -110,9 +107,7 @@ export const filterSearchBar = (payload) => {
 export const getRecipesByQuery = (name) => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(
-        `http://localhost:3001/recipes/?name=${name}`
-      );
+      const response = await axios.get(`/recipes/?name=${name}`);
       const payload = response.data;
       return dispatch({
         type: GETRECIPESBYQUERY,
