@@ -32,6 +32,7 @@ export const Home = () => {
     dispatch(getAllR());
     dispatch(getAllD());
   }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.filter}>

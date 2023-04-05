@@ -17,13 +17,15 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+require('dotenv').config();
 const server = require('./src/app.js');
 const { conn, Diets } = require('./src/db.js');
 const saveApiOnDB = require('./src/helpers/saveApiOnDB');
+const port = process.env.PORT || 3001;
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
+  server.listen(port, () => {
     const dietas = [
       'gluten free',
       'ketogenic',
@@ -40,6 +42,6 @@ conn.sync({ force: true }).then(() => {
       Diets.create({ name: dieta });
     });
     // saveApiOnDB();
-    console.log('Is listening at 3001'); // eslint-disable-line no-console
+    console.log(`Is listening at ${port}`); // eslint-disable-line no-console
   });
 });
