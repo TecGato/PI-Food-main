@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0490f963.chunk.css",
+    "main.js": "/static/js/main.70f88c9c.chunk.js",
+    "main.js.map": "/static/js/main.70f88c9c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8077c0f9.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8077c0f9.js.map",
+    "static/js/2.7ad3632e.chunk.js": "/static/js/2.7ad3632e.chunk.js",
+    "static/js/2.7ad3632e.chunk.js.map": "/static/js/2.7ad3632e.chunk.js.map",
+    "static/js/3.2d2cac02.chunk.js": "/static/js/3.2d2cac02.chunk.js",
+    "static/js/3.2d2cac02.chunk.js.map": "/static/js/3.2d2cac02.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.0490f963.chunk.css.map": "/static/css/main.0490f963.chunk.css.map",
+    "static/js/2.7ad3632e.chunk.js.LICENSE.txt": "/static/js/2.7ad3632e.chunk.js.LICENSE.txt",
+    "static/media/2.27f21005.png": "/static/media/2.27f21005.png",
+    "static/media/Home.module.css": "/static/media/2548748.e2f3d7a7.jpg",
+    "static/media/LandingPage.module.css": "/static/media/ingredients-making-guakamole.01386a74.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8077c0f9.js",
+    "static/js/2.7ad3632e.chunk.js",
+    "static/css/main.0490f963.chunk.css",
+    "static/js/main.70f88c9c.chunk.js"
+  ]
+}

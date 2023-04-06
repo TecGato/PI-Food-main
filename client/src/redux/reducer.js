@@ -110,6 +110,7 @@ const reducer = (state = initialState, action) => {
       const filterfinish = filterRecipes.filter((recipe) => {
         const name = recipe.name.toLowerCase();
         if (name.includes(action.payload)) return recipe;
+        return;
       });
       return {
         ...state,
