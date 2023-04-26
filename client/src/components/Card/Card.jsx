@@ -4,7 +4,7 @@ import style from './Card.module.css';
 
 const Card = (props) => {
   const dietsString = props.diets?.map((diet, index) => {
-    if (index < props.diets.length - 1) return diet + ' ,';
+    if (index < props.diets.length - 1) return diet + ', ';
     return diet;
   });
   return (
